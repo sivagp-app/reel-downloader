@@ -13,7 +13,7 @@ export async function getReelVideoUrl(url: string): Promise<DownloadResult> {
     const apiKey = process.env.RAPIDAPI_KEY;
     const apiHost = process.env.RAPIDAPI_HOST;
 
-    if (!apiKey) {
+    if (!apiKey || !apiHost) {
       return { success: false, error: 'API key not configured' };
     }
 
