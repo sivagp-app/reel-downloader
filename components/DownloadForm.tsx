@@ -44,7 +44,7 @@ export default function DownloadForm() {
 
       setUrl('');
       setLoading(false);
-    } catch (err) {
+    } catch {
       setError('Network error. Try again.');
       setLoading(false);
     }

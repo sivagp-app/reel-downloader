@@ -40,7 +40,7 @@ export async function getReelVideoUrl(url: string): Promise<DownloadResult> {
 
     // Extract video URL from response
     // Response structure: { data: [{ media: "video_url", isVideo: true }] }
-    const videoItem = data?.data?.find((item: any) => item.isVideo === true);
+    const videoItem = data?.data?.find((item: { isVideo: boolean; media: string }) => item.isVideo === true);
     const videoUrl = videoItem?.media;
 
     if (!videoUrl) {
